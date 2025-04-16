@@ -1,0 +1,16 @@
+body{
+    /* 100% NL */
+    --color-primary: #000;
+    --color-secondary: #12a638;
+    --color-accent: #000;
+    --color-bg: #fafafa;
+    --color-timeline: #5D5D5D;
+    --color-text-header: #1e1e1e;
+    --color-text-main: var(--color-black);
+    --color-text-ghost: #8B8B8B;
+    --color-foot-icon: #BABABA;
+    --color-light: #e8e8e8;
+    --color-icon-hover: var(--color-primary);
+    --color-card-bg: #fff;
+    --color-card-txt: #000;
+}

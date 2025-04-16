@@ -1,0 +1,22 @@
+body{
+    /* Radio Veronica */
+    --color-primary: #0091FF;
+    --color-secondary: #FE0170;
+    --color-accent: #011564;
+    --color-bg: #FAFAFA;
+    --color-timeline: #5D5D5D;
+    --color-text-header: #1e1e1e;
+    --color-text-main: var(--color-black);
+    --color-text-ghost: #8B8B8B;
+    --color-foot-icon: #BABABA;
+    --color-light: #e8e8e8;
+    --color-icon-hover: var(--color-primary);
+    --color-card-bg: #fff;
+    --color-card-txt: #000;
+}
+/* Specific Veronica styles */
+header.header-o.radio-1{
+    background-image: url("https://www.radioveronica.nl/veronica/header.png");
+    background-position: 40% center;
+    background-size: 180%;
+}

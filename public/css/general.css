@@ -1,0 +1,179 @@
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrutalType';
+  src: url('/fonts/BrutalType.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+html{
+  font-size: 16px;
+}
+/* Vars */
+
+body{
+  --font-family: 'BrutalType', sans-serif;
+  --text-xs: 0.625rem; /* 10px */
+  --text-s: 0.75rem; /* 12px */
+  --text-m: 1rem; /* 16px */
+  --text-l: 1.25rem; /* 20px */
+  --text-xl: 1.75rem; /* 28px */
+  --text-xxl: 2.25rem; /* 36px */
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --one-day: 2000px; /* 1 day in px for the timetables. Increasing this will increase eaxch timeblock. */
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  @media (min-width: 1200px){
+    --one-day: 7500px;
+  }
+}
+
+/*  */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@supports (grid-template-columns: 0 1fr){
+.main-wrapper-container{
+
+    display: grid;
+    grid-template-columns: 0 1fr;
+    grid-template-rows: 1fr auto;
+    transition: 1s ease-out grid-template-columns;
+    main{
+      grid-column: 2 / 2;
+      grid-row: 1 / 1;
+    }
+    footer{
+      transition: 1s ease;
+      grid-column: 2/-1;
+    }
+  }
+
+    
+}
+
+.desktop-hidden{
+  @media (min-width: 680px){
+    display: none;
+  }
+}
+.desktop-show{
+  @media (max-width: 680px){
+    display: none;
+  }
+}
+.mobile-hidden{
+  @media (max-width: 680px){
+    display: none;
+  }
+}
+.mobile-show{
+  @media (min-width: 680px){
+    display: none;
+  }
+}
+.text-xl{
+  font-size: var(--text-l);
+  @media (min-width: 680px){
+    font-size: var(--text-xl);
+  }
+  color: var(--color-text-header);
+}
+.text-xxl{
+  font-size: var(--text-xl);
+  @media (min-width: 680px){
+    font-size: var(--text-xxl);
+  }
+}
+.text-l{
+  font-size: var(--text-l);
+  color: var(--color-text-header);
+}
+.text-m{
+  font-size: var(--text-m);
+}
+.text-s{
+  font-size: var(--text-s);
+}
+.text-xs{
+  font-size: var(--text-xs);
+}
+.part-ghost{
+  color: var(--color-text-ghost);
+  *{
+    color: var(--color-text-ghost);
+    fill: var(--color-text-ghost);
+  }
+}
+/* Scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+
+.pe-text{
+  max-width: 180px;
+  text-align: center;
+  color: transparent;
+  background: linear-gradient(90deg, rebeccapurple 60%, darkblue 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

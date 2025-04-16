@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deejays</title>
+        <link rel="stylesheet" href="/css/deejays.css">
+    </head>
+    <body>
+        <div class="main-wrapper-container">
+            <main class="radio-station deejays">
+                <div class="part-sticky top-wrapper">
+                
+                    {% if loggedIn %} 
+                        <div class="box">
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if loggedIn %}
+                    <div class="box-auth {% if likeStatus %} m-top {% endif %}">
+                        Hallo {{LoggedInUser}}<a href="/logout/{{ stationNameGeneratedEncoded }}">Uitloggen</a>
+                    </div>
+
+                
+                
+
+                    <section class="deejay-overview {% if deejays.size > 0 %} valid {% endif %}">
+                        <h1 class="text-xxl">DJ's</h1>
+                        {% for deejay in deejays %}
+                            {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded %}
+                        {% else %}
+                            <p class="text-xl">OOPS</p>
+                            <p>Er zijn nog geen DJ's toegevoegd aan deze zender.</p>
+                        {% endfor %}
+                        
+                    </section>
+
+                {% else %}
+                    <h1 class="text-xxl login-txt"> Log in met je gebruikersnaam om toegang te krijgen tot het Deejay overzicht</h1>
+                    <form method="post" action="/login/{{ stationNameGeneratedEncoded }}"  class="{% if likeStatus %} m-top {% endif %}login-form">
+                        <label>Username: <input name="username"></label>
+                        <button>Inloggen</button>
+                    </form>
+
+                {% endif %}
+            </main>
+        </div>
+        <script type="module">
+            if ('fetch' in window && 'DOMParser' in window) {
+                
+                document.addEventListener('submit', async function(event) {
+
+                    const form = event.target
+                    console.log(form.outerHTML);
+                    let type;
+
+                    if (!form.hasAttribute('data-enhanced')) {
+                        return
+                    }
+                    event.preventDefault()                   
+
+                    //Initialise els
+                    let likedCard = form.closest('article');
+                    let likeCount = likedCard.querySelector('.like-count');
+
+                    // remove like and unliked classes
+                    if (likeCount.classList.contains('unliked')) {
+                        likeCount.classList.remove('unliked');
+                    } else if (likeCount.classList.contains('liked')) {
+                        likeCount.classList.remove('liked');
+                    }
+
+
+                    if(form.action.includes('unlike')) {
+                        type = 'unlike'
+                    } else {
+                        type = 'like'
+                    }
+
+                    // Add loading state classes
+                    form.classList.add('loading');
+                    if(type == "unlike"){
+                        likeCount.classList.add('unlike');
+                    } else {    
+                        likeCount.classList.add('like');
+                    }
+                    likedCard.classList.add('loading-card');
+
+                    // UPDATE DOM
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: new URLSearchParams(new FormData(form))
+                    });
+                    console.log(response.status);
+                    // 200 = OK POST, 204 = OK DELETE
+                    if (response.status !== 200 && response.status !== 204) {
+                        console.log('test failed');
+
+                        document.querySelector('.box').classList.add('box-notification');
+                        document.querySelector('.box-notification').classList.add('error');
+                        document.querySelector('.box-notification').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Kruis</title><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>Er is een fout opgetreden bij het Liken van de DJ. Probeer het later opnieuw. Foutcode: ${response.status}`;     
+                    }
+                    
+                    else{
+                        document.querySelector('.box').classList.add('box-notification');
+                        document.querySelector('.box-notification').classList.add('ideal');
+                        document.querySelector('.box-notification').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Vink</title><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>Bedankt voor je feedback!`;    
+                    }
+                    const responseText = await response.text()
+                    const parser = new DOMParser()
+                    const responseDOM = parser.parseFromString(responseText, 'text/html')
+                    const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]')
+                    console.log('test')
+                    // remove loading state classes
+                    form.classList.remove('loading');
+                    likedCard.classList.remove('loading-card');
+
+                    if(type == "unlike"){
+                        likeCount.classList.remove('unlike');
+                    } else {    
+                        likeCount.classList.remove('like');
+                    }
+                    console.log(responseDOM);
+                    console.log(newState.outerHTML);
+                    // remove old state
+                    form.outerHTML = newState.outerHTML;
+
+                    // added ideal status class to the like count
+                    const updatedLikeCount = likedCard.querySelector('.like-count');
+                    if (updatedLikeCount) {
+                        if(type == "unlike"){
+                            updatedLikeCount.classList.add('unliked');
+                        } else {    
+                            updatedLikeCount.classList.add('liked');
+                        }
+                        document.querySelector('.wrapper-likes').blur();
+
+                    }
+                    
+                })
+            }
+        </script>
+    </body>
+</html>
+
+
