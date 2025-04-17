@@ -131,58 +131,299 @@
   .text-xs{
     font-size: var(--text-xs);
   }
-.part-sticky.top-wrapper{
-    display: block;
-    position: sticky;
+
+
+/* Header */
+
+header{
+  position: relative;
+  background-color: #0091FF;
+  display: flex;
+  justify-content: end;
+  padding: 0 32px 0 32px;
+  height: 65px;
+  align-items: center;
+  background-color: var(--color-primary);
+}
+
+header.radio-1{
+  background-color: #0091FF;
+  background-image: url("https://www.radioveronica.nl/veronica/header.png");
+  background-position: 40% center;
+  background-size: 180%;
+}
+header.radio-2{
+  background-color: #000;
+  background-image: url("https://www.slam.nl/slam/campaign-banner.png");
+  background-position: 40% center;
+  background-size: 180%;
+}
+@media (min-width : 680px){
+  header.radio-2{
+    background-image: none;
+  }
+}
+header a.logo{
+  display: block;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  width: 93px;
+  top: 50%;
+  margin-left: 0;
+}
+@media (min-width: 680px){
+  header a.logo{
+    position: relative;
+    top: initial;
+    left: initial;
+    translate: none;
+    margin-left: 28px;
+  }
+}
+header a.logo img{
+  width: 100%;
+}
+header .button-whatsapp{
+  height: 24px;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  transition: 0.2s ease;
+}
+header .button-whatsapp svg{
+  width: 24px;
+  height: 24px;
+}
+header .button-whatsapp svg, header .button-whatsapp svg > *{
+  transition: 0.2s ease;
+  fill: #fff;
+  fill: var(--color-white);
+}
+@media (min-width: 680px){
+  header .button-whatsapp{
+    background-color: #FE0170;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    appearance: none;
+    border: none;
+    display: flex;
+    gap: 8px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+  header.radio-2 .button-whatsapp{
+    background-color: #e50069;
+  }
+
+  header .button-whatsapp span{
+    font-size: 1rem;
+  }
+  header .button-whatsapp:hover, header .button-whatsapp:focus{
+    background-color: #fff;
+    color: #FE0170;
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+  }
+  header.radio-2 .button-whatsapp:hover, header .button-whatsapp:focus{
+    color: #e50069;
+  }
+  header .button-whatsapp:hover svg > *, header .button-whatsapp:focus svg > *{
+    fill: #FE0170;
+    fill: var(--color-secondary); 
+  }
+  header.radio-2 .button-whatsapp:hover svg > *, header .button-whatsapp:focus svg > *{
+    fill: #e50069;
+  }
+}
+@media (min-width: 680px){
+  header{
+    justify-content: start;
+  }
+
+  header .search-icon{
+    margin-left: auto;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: transparent;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+    font-size: 0;
+  }
+  header .search-icon svg{
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 5;
-}
-.part-sticky.top-wrapper .box-notification{
-    padding: 20px 32px;
-}
-.box-notification{
+    width: 24px;
+    height: 24px;
+  }
+  header .search-icon svg > *{
+    fill: #fff;
+    fill: var(--color-white);
+  }
+  header .primary-nav{
     display: flex;
-    align-items: center;
+    margin-left: 3rem;
+    gap: 2rem;
+    list-style: none;
+  }
+  header .primary-nav li a{
+    color: #fff;
+    font-weight: 900;
+    border-bottom: 1px solid transparent;
+    padding: 0 0 7px 0;
+    transition: 0.2s ease;
+    color: var(--color-white);
+  }
+  header .primary-nav li a.active, header .primary-nav li a:hover, header .primary-nav li a:focus{
+    border-color: #fff;
+    border-color: var(--color-white);
+  }  
+}
+@supports (position: sticky){
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
 
-    animation: 0.3s ease-in 0s 1 slideInFromTop;
-    animation-iteration-count: 1;
+
+/* Part sticky */
+.part-sticky.top-wrapper{
+  display: block;
+  width: 100%;
+  background-color: #FAFAFA;
+  z-index: 5;
+  position: relative;
+  background-color: var(--color-bg);
+}
+.deejays-2 .part-sticky.top-wrapper{
+  background-color: #222222;
+}
+@supports (position: sticky){
+  .part-sticky.top-wrapper{
+    position: sticky;
+    top: 65px;
+  }
+}
+
+.part-sticky.topwrapper::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: 10px;
+  background-image:linear-gradient(to bottom,#FAFAFA calc(100% - 2rem),rgba(255,255,255,0));
+}
+
+
+
+.part-sticky.top-wrapper nav.sticky-menu-top{
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  padding-top: 1rem;
+}
+.part-sticky.top-wrapper nav.sticky-menu-top:after{
+  background-color: #e8e8e8;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: var(--color-light);
+  z-index: -1;
+}
+.deejays-2 .part-sticky.top-wrapper nav.sticky-menu-top:after{
+  background-color: #5d5d5d;
+}
+.part-sticky.top-wrapper nav.sticky-menu-top ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0 2rem;
+  overflow-x: auto;
+  gap: 32px;
+  width: fit-content;
+}
+.part-sticky.top-wrapper nav.sticky-menu-top ul li{
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.part-sticky.top-wrapper nav.sticky-menu-top ul li a{
+  color: #8B8B8B;
+  display: block;
+  height: 100%;
+  width: fit-content;
+  color: var(--color-text-ghost);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.deejays-2 .part-sticky.top-wrapper nav.sticky-menu-top ul li a{
+  color: #8B8B8B;
+}
+.part-sticky.top-wrapper nav.sticky-menu-top ul li a:hover, .part-sticky.top-wrapper nav.sticky-menu-top ul li a:focus, .part-sticky.top-wrapper nav.sticky-menu-top ul li a.active{
+  color: #FE0170;
+  border-bottom: 1px solid #FE0170;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-secondary);
+}
+.deejays-2 .part-sticky.top-wrapper nav.sticky-menu-top ul li a:hover, .part-sticky.top-wrapper nav.sticky-menu-top ul li a:focus, .part-sticky.top-wrapper nav.sticky-menu-top ul li a.active{
+  color: #e50069;
+  border-bottom: 1px solid #e50069;
+}
+
+
+
+
+/* Notification */
+
+.box-notification{
+  display: flex;
+  align-items: center;
+  padding: 20px 32px;
+  animation: 0.3s ease-in 0s 1 slideInFromTop;
+  animation-iteration-count: 1;
 }
 @keyframes slideInFromTop {
-    0% {
-        height: 0;
-        padding: 0 32px;
-    }
-    100% {
-        height: 60px;
-        padding: 20px 32px;
-    }
+  0% {
+    height: 0;
+    padding: 0 32px;
+  }
+  100% {
+    height: 60px;
+    padding: 20px 32px;
+  }
 }
 .box-notification.ideal{
-    background-color: #256707;
-    color: #fff;
+  background-color: #256707;
+  color: #fff;
 }
 .box-notification.ideal svg > *, .box-notification.error svg > * {
-    fill: #fff;
+  fill: #fff;
 }
 .box-notification.error{
-    background-color: #FF3737;
-    color: #fff;
+  background-color: #FF3737;
+  color: #fff;
 }
-.part-sticky.topwrapper::after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    height: 10px;
-    background-image:linear-gradient(to bottom,#FAFAFA calc(100% - 2rem),rgba(255,255,255,0));
+.box-notification svg{
+  width: 17px;
+  height: 17px;
+  margin-right: 16px;
 }
-.part-sticky.top-wrapper .box-notification svg{
-    width: 17px;
-    height: 17px;
-    margin-right: 16px;
-}
+/* Auth */
 .box-auth{
     display: flex;
     justify-content: space-between;
@@ -206,11 +447,22 @@
 .box-auth a:hover{
     background: #011564;
 }
-/* Noti bar */
 .m-top{
     margin-top: 1rem;
 }
 
+
+/* body */
+body{
+  background-color: #FAFAFA;
+  background-color: var(--color-bg);
+}
+body.deejays-2{
+  background-color: #222222;
+}
+
+
+/* Deejay overview */
 .deejay-overview{
     padding: 0 1rem;
 }
@@ -462,8 +714,6 @@
     flex-direction: row;
   }
 }
-
-
 
 
 
