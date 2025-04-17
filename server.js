@@ -226,7 +226,7 @@ app.get('/station/:name/djs{/likeStatus/:likeStatus}', async function (request, 
   }
   let stationID = stationURL.id;
   // alle djs voor huidige radiostation
-  const userInfo = "https://fdnd-agency.directus.app/items/mh_shows?fields=show.users.mh_users_id.*,show.users.mh_show_id.*";
+  const userInfo = "https://fdnd-agency.directus.app/items/mh_shows?fields=show.users.mh_users_id.*,show.users.mh_show_id.*,show.users.mh_users_id.cover.*";
   const userInfoFilterPart = "&filter={\"show\":{\"radiostation\":{\"id\":\"" + stationID + "\"}}}&limit=-1";
   const completeUserFetch = await fetch(userInfo + userInfoFilterPart);
   const userInfoJSON = await completeUserFetch.json();

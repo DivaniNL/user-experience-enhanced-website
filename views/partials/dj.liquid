@@ -1,6 +1,6 @@
 <article class="card-{{deejay.mh_users_id.id}}">
 
-    <img src="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover}}" alt="foto van {{deejay.mh_users_id.full_name}}" title="foto van {{deejay.mh_users_id.full_name}}">
+<img src="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover.id}}" alt="foto van {{deejay.mh_users_id.full_name}}" title="foto van {{deejay.mh_users_id.full_name}}" width="{{ deejay.mh_users_id.cover.width }}" height="{{ deejay.mh_users_id.cover.height }}">
     <div class="content">
         <h2 class="text-m">{{deejay.mh_users_id.full_name}}</h2>
         {{likeStatus}}
