@@ -9,7 +9,34 @@
       "date_updated": null,
       "user_created": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
       "user_updated": null,
-      "cover": "4d74ef0a-87d7-4c0d-b066-06b3cdf29b0c"
+      "cover": {
+        "filesize": "2391",
+        "height": 96,
+        "width": 96,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "wwkx27hhlgw-lisanne-thumbnail.jpg",
+        "filename_disk": "4d74ef0a-87d7-4c0d-b066-06b3cdf29b0c.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Wwkx27hhlgw Lisanne Thumbnail",
+        "modified_on": "2024-10-04T12:51:19.683Z",
+        "created_on": "2024-10-04T12:51:19.580Z",
+        "uploaded_on": "2024-10-04T12:51:19.681Z",
+        "folder": null,
+        "uploaded_by": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
+        "modified_by": null,
+        "id": "4d74ef0a-87d7-4c0d-b066-06b3cdf29b0c"
+      }
     },
     "mh_show_id": {
       "id": 1,
@@ -30,7 +57,7 @@
       ]
     },
     "likes": 10,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -42,7 +69,34 @@
       "date_updated": null,
       "user_created": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
       "user_updated": null,
-      "cover": "67bf5900-c2a0-4d27-ad77-f22a3cea502a"
+      "cover": {
+        "filesize": "14888",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "4igum86oqbt4-gerard-ekdom-thumbnail.jpg",
+        "filename_disk": "67bf5900-c2a0-4d27-ad77-f22a3cea502a.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "4igum86oqbt4 Gerard Ekdom Thumbnail",
+        "modified_on": "2024-10-04T13:14:36.165Z",
+        "created_on": "2024-10-04T13:14:35.963Z",
+        "uploaded_on": "2024-10-04T13:14:36.163Z",
+        "folder": null,
+        "uploaded_by": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
+        "modified_by": null,
+        "id": "67bf5900-c2a0-4d27-ad77-f22a3cea502a"
+      }
     },
     "mh_show_id": {
       "id": 2,
@@ -63,7 +117,7 @@
       ]
     },
     "likes": 15,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -75,7 +129,34 @@
       "date_updated": null,
       "user_created": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
       "user_updated": null,
-      "cover": "ef139639-3141-4f79-b0b2-fe4d021947c0"
+      "cover": {
+        "filesize": "1929",
+        "height": 96,
+        "width": 96,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "4nfdiqlfxa0g-marisa-thumbnail.jpg",
+        "filename_disk": "ef139639-3141-4f79-b0b2-fe4d021947c0.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "4nfdiqlfxa0g Marisa Thumbnail",
+        "modified_on": "2024-10-04T13:17:55.140Z",
+        "created_on": "2024-10-04T13:17:54.985Z",
+        "uploaded_on": "2024-10-04T13:17:55.139Z",
+        "folder": null,
+        "uploaded_by": "9fe8d564-9cca-4ebc-9eb5-fba3217963b2",
+        "modified_by": null,
+        "id": "ef139639-3141-4f79-b0b2-fe4d021947c0"
+      }
     },
     "mh_show_id": {
       "id": 3,
@@ -96,7 +177,7 @@
       ]
     },
     "likes": 15,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -108,7 +189,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "71efcf48-a6ed-4aa8-93e9-7a8c91bef2c6"
+      "cover": {
+        "filesize": "13982",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Sander thumbnail.jpg",
+        "filename_disk": "71efcf48-a6ed-4aa8-93e9-7a8c91bef2c6.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Sander Thumbnail",
+        "modified_on": "2024-10-04T13:22:56.850Z",
+        "created_on": "2024-10-04T13:22:56.695Z",
+        "uploaded_on": "2024-10-04T13:22:56.849Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "71efcf48-a6ed-4aa8-93e9-7a8c91bef2c6"
+      }
     },
     "mh_show_id": {
       "id": 4,
@@ -129,7 +237,7 @@
       ]
     },
     "likes": 4,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -141,7 +249,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "7c140e12-bb2f-4005-abe2-a34828bc7849"
+      "cover": {
+        "filesize": "11385",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Rob thumbnail.jpg",
+        "filename_disk": "7c140e12-bb2f-4005-abe2-a34828bc7849.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Rob Thumbnail",
+        "modified_on": "2024-10-04T13:37:55.621Z",
+        "created_on": "2024-10-04T13:37:55.508Z",
+        "uploaded_on": "2024-10-04T13:37:55.620Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "7c140e12-bb2f-4005-abe2-a34828bc7849"
+      }
     },
     "mh_show_id": {
       "id": 5,
@@ -162,7 +297,7 @@
       ]
     },
     "likes": 9,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -174,7 +309,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "6d857391-b5d1-4d9b-b085-5f11fe4ea27b"
+      "cover": {
+        "filesize": "20147",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Riqu29liwj Wout En Frank Thumbnail.jpg",
+        "filename_disk": "6d857391-b5d1-4d9b-b085-5f11fe4ea27b.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Riqu29liwj Wout En Frank Thumbnail",
+        "modified_on": "2024-10-04T13:39:54.924Z",
+        "created_on": "2024-10-04T13:39:54.805Z",
+        "uploaded_on": "2024-10-04T13:39:54.922Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "6d857391-b5d1-4d9b-b085-5f11fe4ea27b"
+      }
     },
     "mh_show_id": {
       "id": 6,
@@ -196,7 +358,7 @@
       ]
     },
     "likes": 6,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -208,7 +370,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "f04d0b01-3486-486a-9f8c-c51970f32af3"
+      "cover": {
+        "filesize": "20147",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Riqu29liwj Wout En Frank Thumbnail.jpg",
+        "filename_disk": "f04d0b01-3486-486a-9f8c-c51970f32af3.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Riqu29liwj Wout En Frank Thumbnail",
+        "modified_on": "2024-10-04T13:40:07.856Z",
+        "created_on": "2024-10-04T13:40:07.737Z",
+        "uploaded_on": "2024-10-04T13:40:07.854Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "f04d0b01-3486-486a-9f8c-c51970f32af3"
+      }
     },
     "mh_show_id": {
       "id": 6,
@@ -242,7 +431,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "c67dd753-0b36-4148-9278-585bb7962454"
+      "cover": {
+        "filesize": "15732",
+        "height": 320,
+        "width": 320,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Martijn thumbnail 320x320.jpg",
+        "filename_disk": "c67dd753-0b36-4148-9278-585bb7962454.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Martijn Thumbnail 320x320",
+        "modified_on": "2024-10-04T13:42:51.628Z",
+        "created_on": "2024-10-04T13:42:51.517Z",
+        "uploaded_on": "2024-10-04T13:42:51.627Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "c67dd753-0b36-4148-9278-585bb7962454"
+      }
     },
     "mh_show_id": {
       "id": 7,
@@ -275,7 +491,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "cf33a0b3-e048-4029-9d25-9f1a37472e36"
+      "cover": {
+        "filesize": "2090",
+        "height": 96,
+        "width": 96,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Frank van Lende thumbnail.jpg",
+        "filename_disk": "cf33a0b3-e048-4029-9d25-9f1a37472e36.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "Frank Van Lende Thumbnail",
+        "modified_on": "2024-10-04T13:44:31.086Z",
+        "created_on": "2024-10-04T13:44:30.969Z",
+        "uploaded_on": "2024-10-04T13:44:31.085Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "cf33a0b3-e048-4029-9d25-9f1a37472e36"
+      }
     },
     "mh_show_id": {
       "id": 8,
@@ -308,7 +551,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "1b0b96cd-7bd7-40a0-b689-ed2e96f3e825"
+      "cover": {
+        "filesize": "12192",
+        "height": 96,
+        "width": 96,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "Veronica program headers.png",
+        "filename_disk": "1b0b96cd-7bd7-40a0-b689-ed2e96f3e825.png",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/png",
+        "title": "Veronica Program Headers",
+        "modified_on": "2024-10-04T13:49:29.619Z",
+        "created_on": "2024-10-04T13:49:29.456Z",
+        "uploaded_on": "2024-10-04T13:49:29.617Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "1b0b96cd-7bd7-40a0-b689-ed2e96f3e825"
+      }
     },
     "mh_show_id": {
       "id": 10,
@@ -341,7 +611,34 @@
       "date_updated": null,
       "user_created": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
       "user_updated": null,
-      "cover": "3a3eef50-ddc4-49b0-a759-eab09a5558ed"
+      "cover": {
+        "filesize": "2009",
+        "height": 96,
+        "width": 96,
+        "duration": null,
+        "focal_point_y": null,
+        "focal_point_x": null,
+        "description": null,
+        "tags": null,
+        "location": null,
+        "filename_download": "6ed7wbs3exgu-jannes-thumbnail.jpg",
+        "filename_disk": "3a3eef50-ddc4-49b0-a759-eab09a5558ed.jpg",
+        "storage": "cloud",
+        "metadata": {},
+        "tus_data": null,
+        "tus_id": null,
+        "embed": null,
+        "charset": null,
+        "type": "image/jpeg",
+        "title": "6ed7wbs3exgu Jannes Thumbnail.jpg",
+        "modified_on": "2024-10-04T18:52:32.626Z",
+        "created_on": "2024-10-04T18:52:32.508Z",
+        "uploaded_on": "2024-10-04T18:52:32.624Z",
+        "folder": null,
+        "uploaded_by": "73ac9577-6d00-4fb2-ab53-5313fe572d09",
+        "modified_by": null,
+        "id": "3a3eef50-ddc4-49b0-a759-eab09a5558ed"
+      }
     },
     "mh_show_id": {
       "id": 20,

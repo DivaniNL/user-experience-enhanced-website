@@ -4,6 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Deejays</title>
+        <link rel="preload" href="/fonts/BrutalType-Thin.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-ExtraLight.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-Light.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-Medium.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-Bold.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-ExtraBold.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType-Black.ttf" as="font" type="font/ttf" >
+        <link rel="preload" href="/fonts/BrutalType.ttf" as="font" type="font/ttf" >
         <link rel="stylesheet" href="/css/deejays.css">
         <link rel="stylesheet" href="/css/colors-{{thisstation}}.css">
     </head>
@@ -11,7 +19,18 @@
         <header class="radio-{{thisstation}}">
 
             <a href="/station/{{thisstation}}" class="logo">
-                <img src="/assets/radio-{{thisstation}}.png" alt="Logo van {{ thisstation }}">
+                {% case thisstation %}
+                    {% when 1 %}
+                        <img src="/assets/radio-1.png" width="93" height="33" alt="Logo van {{ stationNameGenerated }}">
+                    {% when 2 %}
+                        <img src="/assets/radio-2.png" width="143" height="29" alt="Logo van {{ stationNameGenerated }}">
+                    {% when 3 %}
+                        <img src="/assets/radio-3.png" width="1470" height="598" alt="Logo van {{ stationNameGenerated }}">
+                    {% when 4 %}
+                        <img src="/assets/radio-4.png" width="889" height="216" alt="Logo van {{ stationNameGenerated }}">
+                    {% else %}
+                        <img src="/assets/radio-5.png" width="106" height="33" alt="Logo van {{ stationNameGenerated }}">
+                {% endcase %}
             </a>
             <nav class="desktop-show">
     
