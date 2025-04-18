@@ -148,13 +148,13 @@ header{
 
 header.radio-1{
   background-color: #0091FF;
-  background-image: url("https://www.radioveronica.nl/veronica/header.png");
+  background-image: url("../assets/header.avif");
   background-position: 40% center;
   background-size: 180%;
 }
 header.radio-2{
   background-color: #000;
-  background-image: url("https://www.slam.nl/slam/campaign-banner.png");
+  background-image: url("../assets/campaign-banner.avif");
   background-position: 40% center;
   background-size: 180%;
 }
@@ -492,6 +492,10 @@ body.deejays-2{
     content: "";
     width: 100%;
     height: 100%;
+}
+.deejay-overview article picture{
+  width: 100%;
+  height: auto;
 }
 .deejay-overview article img{
     object-fit: cover;
