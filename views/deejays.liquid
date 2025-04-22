@@ -85,10 +85,11 @@
                     <section class="deejay-overview {% if deejays.size > 0 %} valid {% endif %}">
                         <h1 class="text-xxl">DJ's</h1>
                         {% for deejay in deejays %}
+                            {% assign mod = forloop.index | modulo: 2 %}
                             {% if forloop.index > 6 %}
-                                {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "lazy" %}
+                                {%  render 'partials/dj.liquid' mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "lazy" %}
                             {% else %}
-                                {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "fast" %}
+                                {%  render 'partials/dj.liquid' mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "fast" %}
 
                             {% endif %}
 
@@ -143,6 +144,13 @@
 
                     // Add loading state classes
                     form.classList.add('loading');
+                    
+                    if(form.action.includes('unlike')) {
+                        likedCard.querySelector('.submittxt').innerHTML = "Unliking..";
+                    } else {
+                        likedCard.querySelector('.submittxt').innerHTML = "Liking..";
+                    }
+                    // likedCard.querySelector('.submittxt').innerHTML('Loading');
                     if(type == "unlike"){
                         likeCount.classList.add('unlike');
                     } else {    

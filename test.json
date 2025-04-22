@@ -57,7 +57,7 @@
       ]
     },
     "likes": 11,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -116,8 +116,8 @@
         2
       ]
     },
-    "likes": 15,
-    "likedByThisUser": true
+    "likes": 13,
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -176,8 +176,8 @@
         3
       ]
     },
-    "likes": 15,
-    "likedByThisUser": true
+    "likes": 13,
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -236,7 +236,7 @@
         4
       ]
     },
-    "likes": 4,
+    "likes": 5,
     "likedByThisUser": true
   },
   {
@@ -296,7 +296,7 @@
         5
       ]
     },
-    "likes": 9,
+    "likes": 10,
     "likedByThisUser": true
   },
   {
@@ -357,7 +357,7 @@
         7
       ]
     },
-    "likes": 6,
+    "likes": 7,
     "likedByThisUser": true
   },
   {
@@ -419,7 +419,7 @@
       ]
     },
     "likes": 4,
-    "likedByThisUser": true
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {

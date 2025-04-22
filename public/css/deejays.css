@@ -474,7 +474,7 @@ body.deejays-2{
     justify-content: center;
 }
 /* Loading state */
-.deejay-overview article.loading-card::after{
+.deejay-overview article.version-1.loading-card::after{
     background-image: url('../assets/pulse-3.svg');
     background-size: cover;
     background-size: 100px 100px;
@@ -485,8 +485,14 @@ body.deejays-2{
     height: 100%;
     content: '';
 }
-.deejay-overview article.loading-card img{
+.deejay-overview article.version-1.loading-card picture>img{
   filter: blur(4px);
+}
+.deejay-overview article.loading-card .wrapper-likes.version-2 .vinyl-load{
+  display: block;
+}
+.deejay-overview article.loading-card .wrapper-likes.version-2 svg{
+  display: none;
 }
 .deejay-overview article::before{
     background: linear-gradient(180deg, rgba(28, 30, 37, 0.00) 0.14%, rgba(28, 30, 37, 0.65) 99.86%);
@@ -529,7 +535,7 @@ body.deejays-2{
   top: 0;
   display: flex;
   align-items: center;
-  padding: 0 14px;
+  padding: 0 24px;
   gap: 10px;
   border-radius: 30px;
   color: #980144;
@@ -564,7 +570,7 @@ body.deejays-2{
 }
 @keyframes slideNumberIn {
   0% {
-    translate: 0 -150%;
+    translate: 0 -180%;
   }
   100% {
     translate: 0 0;
@@ -580,7 +586,7 @@ body.deejays-2{
     translate: 0 0;
   }
   100% {
-    translate: 0 150%;
+    translate: 0 180%;
   }
 }
 /* Unlike animations (reversed) */
@@ -593,7 +599,7 @@ body.deejays-2{
     translate: 0 0;
   }
   100% {
-    translate: 0 -150%;
+    translate: 0 -180%;
   }
 }
 .deejay-overview article .wrapper-likes .like-count.unliked{
@@ -602,7 +608,7 @@ body.deejays-2{
 }
 @keyframes slideNumberInReverse {
   0% {
-    translate: 0 -150%;
+    translate: 0 -180%;
   }
   100% {
     translate: 0 0;
@@ -626,7 +632,7 @@ body.deejays-2{
 }
 .deejay-overview article form button .submittxt{
   border-left: 3px solid #980144;
-  padding: 7px 0 7px 7px;
+  padding: 17px 0 17px 17px;
 }
 .deejay-overview article form button.likedbyyou .submittxt{
   border-left: 3px solid #fff;
@@ -634,12 +640,15 @@ body.deejays-2{
 .deejay-overview article .wrapper-likes:hover .submittxt, .deejay-overview article .wrapper-likes:focus .submittxt{
   border-left: 3px solid #fff;
  }
-.deejay-overview article form button svg{
+.deejay-overview article form button svg, .deejay-overview article form button .vinyl-load{
     width: 30px;
     height: 30px;
     margin: 0;
-    padding: 7px 0;
+    min-width: 30px;
     min-height: 30px;
+}
+.deejay-overview article form button .vinyl-load{
+  display: none;
 }
 .deejay-overview article form button svg > *{
     fill: white;
@@ -723,7 +732,3 @@ body.deejays-2{
     flex-direction: row;
   }
 }
-
-
-
-
