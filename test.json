@@ -56,8 +56,8 @@
         1
       ]
     },
-    "likes": 10,
-    "likedByThisUser": false
+    "likes": 11,
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -117,7 +117,7 @@
       ]
     },
     "likes": 15,
-    "likedByThisUser": false
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -177,7 +177,7 @@
       ]
     },
     "likes": 15,
-    "likedByThisUser": false
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -237,7 +237,7 @@
       ]
     },
     "likes": 4,
-    "likedByThisUser": false
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -297,7 +297,7 @@
       ]
     },
     "likes": 9,
-    "likedByThisUser": false
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -358,7 +358,7 @@
       ]
     },
     "likes": 6,
-    "likedByThisUser": false
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -418,8 +418,8 @@
         7
       ]
     },
-    "likes": 3,
-    "likedByThisUser": false
+    "likes": 4,
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {

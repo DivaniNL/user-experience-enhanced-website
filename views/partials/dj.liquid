@@ -2,7 +2,7 @@
     <picture>
         <source srcset="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover.id}}?format=avif" type="image/avif">
         <source srcset="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover.id}}?format=webp" type="image/webp">
-        <img src="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover.id}}" alt="foto van {{deejay.mh_users_id.full_name}}" title="foto van {{deejay.mh_users_id.full_name}}" width="{{ deejay.mh_users_id.cover.width }}" height="{{ deejay.mh_users_id.cover.height }}">
+        <img src="https://fdnd-agency.directus.app/assets/{{deejay.mh_users_id.cover.id}}" alt="foto van {{deejay.mh_users_id.full_name}}" title="foto van {{deejay.mh_users_id.full_name}}" width="{{ deejay.mh_users_id.cover.width }}" height="{{ deejay.mh_users_id.cover.height }}" {% if loading == "lazy" %} loading="lazy" {% endif %}>
     </picture>
     <div class="content">
         <h2 class="text-m">{{deejay.mh_users_id.full_name}}</h2>
@@ -17,6 +17,7 @@
     
             <button type="submit" class="wrapper-likes{% if deejay.likedByThisUser %} likedbyyou{% endif %}">
                 <span class="like-count">{{deejay.likes}} </span>
+                <img src="/assets/vinyl-record.gif" alt="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
                     <title>Hart</title>
                     <path d="M9.5 3.68463C8.53077 2.06925 6.91538 0.938477 4.97692 0.938477C2.23077 0.938477 0.130768 3.03848 0.130768 5.78463C0.130768 11.1154 3.03846 11.9231 9.5 18.0616C15.9615 11.9231 18.8692 11.1154 18.8692 5.78463C18.8692 3.03848 16.7692 0.938477 14.0231 0.938477C12.0846 0.938477 10.4692 2.06925 9.5 3.68463Z" fill="#FE0170"/>

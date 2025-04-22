@@ -85,7 +85,13 @@
                     <section class="deejay-overview {% if deejays.size > 0 %} valid {% endif %}">
                         <h1 class="text-xxl">DJ's</h1>
                         {% for deejay in deejays %}
-                            {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded %}
+                            {% if forloop.index > 6 %}
+                                {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "lazy" %}
+                            {% else %}
+                                {%  render 'partials/dj.liquid' deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "fast" %}
+
+                            {% endif %}
+
                         {% else %}
                             <p class="text-xl">OOPS</p>
                             <p>Er zijn nog geen DJ's toegevoegd aan deze zender.</p>
