@@ -56,7 +56,7 @@
         1
       ]
     },
-    "likes": 11,
+    "likes": 10,
     "likedByThisUser": false
   },
   {
@@ -116,8 +116,8 @@
         2
       ]
     },
-    "likes": 13,
-    "likedByThisUser": false
+    "likes": 14,
+    "likedByThisUser": true
   },
   {
     "mh_users_id": {
@@ -176,7 +176,7 @@
         3
       ]
     },
-    "likes": 13,
+    "likes": 14,
     "likedByThisUser": false
   },
   {
@@ -236,8 +236,8 @@
         4
       ]
     },
-    "likes": 5,
-    "likedByThisUser": true
+    "likes": 4,
+    "likedByThisUser": false
   },
   {
     "mh_users_id": {
@@ -357,7 +357,7 @@
         7
       ]
     },
-    "likes": 7,
+    "likes": 8,
     "likedByThisUser": true
   },
   {
