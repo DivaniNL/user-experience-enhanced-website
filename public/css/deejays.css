@@ -139,11 +139,17 @@ header{
   position: relative;
   background-color: #0091FF;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   padding: 0 32px 0 32px;
   height: 65px;
   align-items: center;
   background-color: var(--color-primary);
+}
+@media (min-width: 680px){
+  header{
+    justify-content: end;
+
+  }
 }
 
 header.radio-1{
@@ -165,24 +171,25 @@ header.radio-2{
 }
 header a.logo{
   display: block;
-  position: absolute;
-  left: 50%;
-  translate: -50% -50%;
   width: 93px;
-  top: 50%;
   margin-left: 0;
 }
 @media (min-width: 680px){
   header a.logo{
     position: relative;
-    top: initial;
-    left: initial;
-    translate: none;
     margin-left: 28px;
   }
 }
 header a.logo img{
   width: 100%;
+}
+header a.logo.logo-1 img{
+  width: 33px;
+}
+@media (min-width: 680px){
+  header a.logo.logo-1 img{
+    width: 93px;
+  }
 }
 header .button-whatsapp{
   height: 24px;

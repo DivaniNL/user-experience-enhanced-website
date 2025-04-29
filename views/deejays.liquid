@@ -18,10 +18,21 @@
     <body class="deejays-{{thisstation}}">
         <header class="radio-{{thisstation}}">
 
-            <a href="/station/{{thisstation}}" class="logo">
+            <a href="/station/{{thisstation}}" class="logo logo-{{thisstation}}">
                 {% case thisstation %}
                     {% when 1 %}
-                        <img src="/assets/radio-1.png" width="93" height="33" alt="Logo van {{ stationNameGenerated }}">
+                        <picture>
+
+                            <source media="(min-width: 680px)" type="image/avif" srcset="/assets/radio-1.avif">
+                            <source media="(min-width: 680px)" type="image/webp" srcset="/assets/radio-1.webp">
+
+                            <source type="image/avif" srcset="/assets/radio-1-s.avif">
+                            <source type="image/webp" srcset="/assets/radio-1-s.webp">
+                            <source type="image/png"  srcset="/assets/radio-1-s.png">
+
+                            <img src="/assets/radio-1.png" width="93" height="33" alt="Logo van {{ stationNameGenerated }}">
+                        </picture>
+                        
                     {% when 2 %}
                         <img src="/assets/radio-2.png" width="143" height="29" alt="Logo van {{ stationNameGenerated }}">
                     {% when 3 %}
