@@ -591,7 +591,8 @@ z-index: 3;
 }
 
 .deejay-overview article .wrapper-likes svg > *{
-    fill: #980144;
+    stroke: #980144;
+    stroke-width: 2px;
     transition: 0.2s ease;
 }
 .deejay-overview article .wrapper-likes.likedbyyou, .deejay-overview article .wrapper-likes:hover, .deejay-overview article .wrapper-likes:focus{
@@ -600,8 +601,9 @@ z-index: 3;
     color: #fff;
 }
 
-.deejay-overview article .wrapper-likes.likedbyyou svg > *{
+.deejay-overview article .wrapper-likes.likedbyyou svg > *, .deejay-overview article .wrapper-likes:hover svg > *, .deejay-overview article .wrapper-likes:focus svg > *{
     fill: #fff;
+    stroke: #fff;
 }
 
 /* Like animations */
@@ -681,12 +683,31 @@ z-index: 3;
 .deejay-overview article .wrapper-likes:hover .submittxt, .deejay-overview article .wrapper-likes:focus .submittxt{
   border-left: 3px solid #fff;
  }
-.deejay-overview article form button svg, .deejay-overview article form button .vinyl-load{
+.deejay-overview article form button .vinyl-load{
     width: 30px;
     height: 30px;
     margin: 0;
     min-width: 30px;
     min-height: 30px;
+}
+.deejay-overview article form button svg{
+  width: 34px;
+  height: 30px;
+  margin: 0;
+  min-width: 34px;
+  min-height: 30px;
+}
+.deejay-overview article.version-1.loading-card form button svg{
+  animation: 0.5s pulse infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes pulse{
+  0%{
+    scale: 1;
+  }
+  100%{
+    scale: 0.8;
+  }
 }
 .deejay-overview article form button .vinyl-load{
   display: none;
