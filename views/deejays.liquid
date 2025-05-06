@@ -90,18 +90,15 @@
                     <div class="box-auth {% if likeStatus %} m-top {% endif %}">
                         Hallo {{LoggedInUser}}<a href="/logout/{{ stationNameGeneratedEncoded }}">Uitloggen</a>
                     </div>
-
-                
-                
-
                     <section class="deejay-overview {% if deejays.size > 0 %} valid {% endif %}">
                         <h1 class="text-xxl">DJ's</h1>
+                        
                         {% for deejay in deejays %}
                             {% assign mod = forloop.index | modulo: 2 %}
                             {% if forloop.index > 6 %}
-                                {%  render 'partials/dj.liquid' mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "lazy" %}
+                                {%  render 'partials/dj.liquid' index: forloop.index mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "lazy" %}
                             {% else %}
-                                {%  render 'partials/dj.liquid' mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "fast" %}
+                                {%  render 'partials/dj.liquid' index: forloop.index mod: mod deejay: deejay, stationName: stationNameGenerated, stationNameGeneratedEncoded: stationNameGeneratedEncoded, loading: "fast" %}
 
                             {% endif %}
 
@@ -130,6 +127,10 @@
                     const form = event.target
                     console.log(form.outerHTML);
                     let type;
+                    // Remove all active card view transitions
+                    document.querySelectorAll('.deejay-overview > article').forEach(card => {
+                        card.removeAttribute("style")
+                    });
 
                     if (!form.hasAttribute('data-enhanced')) {
                         return
@@ -193,7 +194,7 @@
                     const responseText = await response.text()
                     const parser = new DOMParser()
                     const responseDOM = parser.parseFromString(responseText, 'text/html')
-                    const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]')
+                    const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]').closest('article');
                     console.log('test')
                     // remove loading state classes
                     form.classList.remove('loading');
@@ -207,7 +208,15 @@
                     console.log(responseDOM);
                     console.log(newState.outerHTML);
                     // remove old state
-                    form.outerHTML = newState.outerHTML;
+
+                    if (document.startViewTransition) {
+                        document.startViewTransition(function() {
+                            newState.style.viewTransitionName = 'active-card';
+                            likedCard.outerHTML = newState.outerHTML
+                        })
+                    } else {
+                        likedCard.outerHTML = newState.outerHTML
+                    }
 
                     // added ideal status class to the like count
                     const updatedLikeCount = likedCard.querySelector('.like-count');

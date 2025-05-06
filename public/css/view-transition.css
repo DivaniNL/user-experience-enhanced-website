@@ -1,13 +1,21 @@
 @media not (prefers-reduced-motion: reduce) {
     /* View transition */
+
     .main-wrapper-container{
         /* So the content does not overlap */
-        background-color: white; 
+        background-color: #FAFAFA; 
+    }
+    .deejays-2  .main-wrapper-container{
+        /* So the content does not overlap */
+        background-color: #222222; 
+    }
+    .deejays-2  .main-wrapper-container .box-auth, .deejays-2  .main-wrapper-container .text-xxl{
+        color: white;
     }
     @view-transition {
         navigation: auto;
     }
-    ::view-transition-old(content-swap) {
+     ::view-transition-old(content-swap) {
         animation: slide .75s linear forwards;
     }
     ::view-transition-new(content-swap) {
@@ -20,6 +28,31 @@
         }
         to {
             translate: 100% 0;
+        }
+    }
+    
+    ::view-transition-old(active-card) {
+        animation: active-card 0.6s linear forwards;
+    }
+    ::view-transition-new(active-card) {
+        animation: active-card 0.6s linear backwards;
+    }
+
+    @keyframes active-card {
+        0% {
+           scale: 1;
+        }
+        25%{
+            translate: 0 -8rem;
+        }
+        50%{
+            scale: 1.2;
+            rotate: -10deg;
+
+        }
+        
+        100% {
+            scale: 1;
         }
     }
 }
