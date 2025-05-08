@@ -70,7 +70,7 @@
                 </span>
             </a>
         </header>
-        <div class="main-wrapper-container" style="view-transition-name: content-swap">
+        <div class="main-wrapper-container">
             <main class="radio-station deejays style-{{thisstation}}">
                 <div class="part-sticky top-wrapper">
             
@@ -205,17 +205,22 @@
                     } else {    
                         likeCount.classList.remove('like');
                     }
-                    console.log(responseDOM);
-                    console.log(newState.outerHTML);
                     // remove old state
 
                     if (document.startViewTransition) {
-                        document.startViewTransition(function() {
-                            newState.style.viewTransitionName = 'active-card';
-                            likedCard.outerHTML = newState.outerHTML
+                        document.documentElement.classList.add('please-ignore-coole-view-transitions')
+                        let transition = document.startViewTransition(function() {
+                            likedCard.classList.add('fix-die-shit')
+                            likedCard.innerHTML = newState.innerHTML
                         })
+                        try {
+                            await transition.finished;
+                        } finally {
+                            document.documentElement.classList.remove('please-ignore-coole-view-transitions');
+                            likedCard.classList.remove('fix-die-shit')
+                        }
                     } else {
-                        likedCard.outerHTML = newState.outerHTML
+                        likedCard.innerHTML = newState.innerHTML
                     }
 
                     // added ideal status class to the like count

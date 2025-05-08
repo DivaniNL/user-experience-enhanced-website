@@ -11,7 +11,7 @@
 {% assign percentageGone = curTimeInMinutes | divided_by: totalMinutesInDay | times: 100 %}
 {% comment %} End of Chat GPT Code {% endcomment %}
 
-<div class="main-wrapper-container" style="view-transition-name: content-swap">
+<div class="main-wrapper-container">
     {% render 'partials/aside.liquid' 
     showsforStation: showsforStation,
     stationNameGenerated: stationNameGenerated,

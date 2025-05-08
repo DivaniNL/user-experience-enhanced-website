@@ -1,6 +1,8 @@
 @media not (prefers-reduced-motion: reduce) {
     /* View transition */
-
+    html:not(.please-ignore-coole-view-transitions) .main-wrapper-container{
+        view-transition-name: content-swap;
+    }
     .main-wrapper-container{
         /* So the content does not overlap */
         background-color: #FAFAFA; 
@@ -15,7 +17,8 @@
     @view-transition {
         navigation: auto;
     }
-     ::view-transition-old(content-swap) {
+
+    ::view-transition-old(content-swap) {
         animation: slide .75s linear forwards;
     }
     ::view-transition-new(content-swap) {
@@ -30,7 +33,9 @@
             translate: 100% 0;
         }
     }
-    
+    .fix-die-shit{
+        view-transition-name: active-card;
+    }
     ::view-transition-old(active-card) {
         animation: active-card 0.6s linear forwards;
     }
