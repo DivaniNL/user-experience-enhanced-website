@@ -123,8 +123,7 @@ https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c
 
 Hierna worden alle Likes opgehaald en worden deze toegevoegd aan de JSON per User:
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/server.js#L255-L271
-
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/d464e275fe1dd4fa5c1d452ebc784d61b6f88ebb/server.js#L255-L271
 
 **POST (Like)**
 Als een DJ wordt geliked wordt er een Like toegevoegd aan de mh_messages API endpoint
