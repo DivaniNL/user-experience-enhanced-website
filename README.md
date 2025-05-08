@@ -18,32 +18,6 @@ https://github.com/user-attachments/assets/d8d0888a-28c8-49df-b37b-9fcf44096242
 Mijn User story:
 Als een bezoeker van de website, wil ik per radiostation de DJ’s kunnen liken en unliken, zodat ik mijn favoriete DJ’s kan ondersteunen en anderen kan zien welke DJ’s populair zijn.
 
-## Performance
-
-### Layout shifts
-
-Ik heb deze sprint de Layout shift geminimaliseerd op de website.
-Het probleem van de layout shifts op deze pagina lag vooral aan de afbeeldingen.
-
-Ik heb de afmetingen van de afbeeldingen uit de database gebruikt en in de code gezet. ( ook heb ik hier voorang gegeven aan moderne image types, zoals avif en webp)
-
-https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/partials/dj.liquid#L2-L6
-
-
-### Skeleton state (perceived performance)
-
-Om gebruikers met een langzamere internetsnelheid meer het gevoel te geven dat er content geladen wordt heb ik op de afbeeldingen een skeleton state toegevoegd:
-
-Ook heb ik hiervoor een text-shadow op de tekst gezet. Als de browser dit support is dat mooi meegenomen, maar aangezien dit niet de usability breekt als dit ontbreekt, hoeft hier geen feature detection omheen.
-
-Hieronder is het Skeleton effect te zien:
-
-https://github.com/user-attachments/assets/b4a353b0-62cf-4b30-818a-c0ad217d3182
-
-Dit heb ik gemaakt met een achtergrond met een gradient met opacity die de hele tijd in komt sliden en deze animatie herhaalt zich steeds:
-
-https://github.com/DivaniNL/user-experience-enhanced-website/blob/620fb692f0bdc21c63c5016eac5ec6f1bd01af7d/public/css/deejays.css#L510-L528
-
 
 ## Ontwerpkeuzens
 
@@ -63,6 +37,55 @@ In dit ontwerp heb ik **Feedback** toegepast op meerdere manieren.
 
 
 ## Kenmerken
+
+### Performance
+
+#### Layout shifts
+
+Ik heb deze sprint de Layout shift geminimaliseerd op de website.
+Het probleem van de layout shifts op deze pagina lag vooral aan de afbeeldingen.
+
+Ik heb de afmetingen van de afbeeldingen uit de database gebruikt en in de code gezet. ( ook heb ik hier voorang gegeven aan moderne image types, zoals avif en webp)
+
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/partials/dj.liquid#L2-L6
+
+
+#### Skeleton state (perceived performance)
+
+Om gebruikers met een langzamere internetsnelheid meer het gevoel te geven dat er content geladen wordt heb ik op de afbeeldingen een skeleton state toegevoegd:
+
+Ook heb ik hiervoor een text-shadow op de tekst gezet. Als de browser dit support is dat mooi meegenomen, maar aangezien dit niet de usability breekt als dit ontbreekt, hoeft hier geen feature detection omheen.
+
+Hieronder is het Skeleton effect te zien:
+
+https://github.com/user-attachments/assets/b4a353b0-62cf-4b30-818a-c0ad217d3182
+
+Dit heb ik gemaakt met een achtergrond met een gradient met opacity die de hele tijd in komt sliden en deze animatie herhaalt zich steeds:
+
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/620fb692f0bdc21c63c5016eac5ec6f1bd01af7d/public/css/deejays.css#L510-L528
+
+### View transitions
+
+Ook heb ik als enhancement view transitions toegevoegd aan de website
+
+#### Multi page view transition
+
+Ik heb een animatie toegevoegd die zich afspeelt tussen de twee pagina's die ik de afgelopen sprints heb gemaakt en verbeterd:
+
+
+
+https://github.com/user-attachments/assets/6a338f21-bac4-4ace-ac71-8f456d7109fb
+
+#### Single page view transition
+
+Ik heb een view transition gemaakt die zich afspeelt tijdens de success state van de like/unlike functie:
+
+
+
+https://github.com/user-attachments/assets/e8685d22-f3f2-40b7-9f3a-7b79ff5647a7
+
+
+
 
 ### Progressive Enhancement
 
