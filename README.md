@@ -1,23 +1,48 @@
 # DJ-overzicht Mediahuis
 
 ## Beschrijving
-Voor deze sprint heb ik een DJ overzicht gemaakt waar je DJ's kan liken en unliken op basis van een gebruikersnaam.
+Voor deze sprint heb ik het DJ overzicht verbeterd door performance issues te tackelen. Hiernaast heb ik ook view-transitions toegevoegd
 De site is hier te bekijken:
-[https://server-side-rendering-server-side-website-g630.onrender.com/](https://the-web-is-for-everyone-interactive-cq43.onrender.com/station/Radio%20Veronica/djs)
-
+[https://user-experience-enhanced-website-mmgq.onrender.com/station/Radio%20Veronica/djs/](https://user-experience-enhanced-website-mmgq.onrender.com/station/Radio%20Veronica/djs/)
 
 ## Gebruik
 
+In onderstaande video is het te zien hoe je kan inloggen, kan liken en kan unliken.
 
-In onderstaande video is het te zien hoe je kan inloggen, kan liken en kan unliken. (voor unliken hoef je neit te refreshen, maar hier wilde ik laten zien dat de likes per persoon bleven staan)
 
+https://github.com/user-attachments/assets/d8d0888a-28c8-49df-b37b-9fcf44096242
 
-https://github.com/user-attachments/assets/fb938c03-15d1-4e5e-b23d-2c64c988c3ca
 
 
 
 Mijn User story:
 Als een bezoeker van de website, wil ik per radiostation de DJ’s kunnen liken en unliken, zodat ik mijn favoriete DJ’s kan ondersteunen en anderen kan zien welke DJ’s populair zijn.
+
+## Performance
+
+### Layout shifts
+
+Ik heb deze sprint de Layout shift geminimaliseerd op de website.
+Het probleem van de layout shifts op deze pagina lag vooral aan de afbeeldingen.
+
+Ik heb de afmetingen van de afbeeldingen uit de database gebruikt en in de code gezet. ( ook heb ik hier voorang gegeven aan moderne image types, zoals avif en webp)
+
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/partials/dj.liquid#L2-L6
+
+
+### Skeleton state (perceived performance)
+
+Om gebruikers met een langzamere internetsnelheid meer het gevoel te geven dat er content geladen wordt heb ik op de afbeeldingen een skeleton state toegevoegd:
+
+Ook heb ik hiervoor een text-shadow op de tekst gezet. Als de browser dit support is dat mooi meegenomen, maar aangezien dit niet de usability breekt als dit ontbreekt, hoeft hier geen feature detection omheen.
+
+Hieronder is het Skeleton effect te zien:
+
+https://github.com/user-attachments/assets/b4a353b0-62cf-4b30-818a-c0ad217d3182
+
+Dit heb ik gemaakt met een achtergrond met een gradient met opacity die de hele tijd in komt sliden en deze animatie herhaalt zich steeds:
+
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/620fb692f0bdc21c63c5016eac5ec6f1bd01af7d/public/css/deejays.css#L510-L528
 
 
 ## Ontwerpkeuzens
@@ -33,6 +58,8 @@ In dit ontwerp heb ik **Feedback** toegepast op meerdere manieren.
 1. Door de label te veranderen
 2. Door de achtergrondkleur en tekstkleur van de knop te veranderen als je hem geliked hebt t.o.v als je de DJ niet geliked hebt.
 3. Notificatiebalk boven (in video onder **Gebruik** is dit te zien)
+**NIEUW DEZE SPRINT**
+4. Als er een like of unlike wordt gedaan, stuitert de gelikete card omhoog
 
 
 ## Kenmerken
@@ -92,7 +119,7 @@ Een link kan dan zijn:
 **GET**
 De data wordt opgehaald van de Directus API met behulp van `fetch`. Bijvoorbeeld, in de route `GET /` wordt de lijst van alle shows van het huidige station ingeladen. Hieruit worden alle gekoppelde Users gehaald om zo een overzicht te bouwen
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/server.js#L229-L232
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/server.js#L229-L232
 
 Hierna worden alle Likes opgehaald en worden deze toegevoegd aan de JSON per User:
 
@@ -102,14 +129,14 @@ https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/bl
 **POST (Like)**
 Als een DJ wordt geliked wordt er een Like toegevoegd aan de mh_messages API endpoint
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/server.js#L317-L339
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/server.js#L320-L343
 
 
 **DELETE (Unlike)**
 
 Als er een DJ wordt ge-unliked wordt de like van de aangeklikte DJ van de ingelogde user verwijderd:
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/server.js#L344-L371
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/server.js#L347-L375
 
 
 ### HTML renderen met data
@@ -117,29 +144,25 @@ De HTML wordt gerenderd met Liquid templates. Bijvoorbeeld, in de route `GET /` 
 
 **deejays.liquid:**
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/views/deejays.liquid#L30-L32
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L93-L110
 
 **dj.liquid**
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/views/partials/dj.liquid#L1-L36
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/partials/dj.liquid#L1-L43
 
 ### UI states:
 
 Ik heb de volgende states ontworpen en gebouwd:
 
-#### Loading state
+#### Loading state (NIEUW)
 
-Ontwerp: (SVG + blur)
-![image](https://github.com/user-attachments/assets/4a45d005-e711-4df2-8460-1d138cd6e41f)
-Tijdens de Loading state is een Pulse animatie te zien (dit is een animated gif). Als de loading state ingaat gaat het oude nummer omhoog of omlaag (afhankelijk van of je liked of unliked)
-
-Ik heb tijdens de bouwfase bedacht om de tekst en de button geen blur te geven, en om een rustigere animatie te kiezen t.o.v. het ontwerp.
-
-Hieronder een video van de aniamtie:
+Voor de loading state heb ik twee versies toegevoegd:
 
 
-https://github.com/user-attachments/assets/ac3e9f97-bc94-41dc-a5ce-dde4f8c31350
+https://github.com/user-attachments/assets/9c4af004-1e1b-4644-bbd5-fab9ec49f0f2
 
+1. Vinyl Spinner: Ik heb in lijn met de doelgroep een muzikaal tintje toegevoegd door een draaiende platenspeler te tonen. In dit voorbeeld heb ik de pulse op de afbeelding weggelaten
+2. Pusiugn heart: Ik heb het hartje laten pulseren in combinatie met de pulse op de afbeelding.
 
 #### Ideal state op element
 Tijdens de Ideal state komt het nieuwe nummer insliden van boven of onder (afhankelijk van of je liked of unliked)
@@ -153,23 +176,22 @@ Hieronder is te zien hoe ik dat gedaan heb in code:
 **JS**
 
 Verwijder alle classes om mee te beginnen en voeg juiste class toe (like of unlike|)
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/862b186b430d535002b9a67db90443bc7cc58700/views/deejays.liquid#L67-L88
+
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L144-L172
 
 Na de request, verwijder loading state classes
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/862b186b430d535002b9a67db90443bc7cc58700/views/deejays.liquid#L119-L123
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L200-L201
 
 Voeg finished states toe om de animatie af te ronden:
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/862b186b430d535002b9a67db90443bc7cc58700/views/deejays.liquid#L130-L138
-
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L228-L236
 
 **CSS**
 
 Hieronder de keyframe animateis om het nummer in en uit te sliden:
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/862b186b430d535002b9a67db90443bc7cc58700/public/css/deejays.css#L297-L347
-
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/public/css/deejays.css#L609-L659
 
 #### Error state (Edited)
 Als de Like/Unlike niet goed uitgevoerd wordt verschijnt een errorbalk met foutmelding
@@ -178,7 +200,7 @@ https://github.com/user-attachments/assets/943aa4ae-2f1a-4199-be48-8435eb6c3a3b
 
 Hieronder is te zien hoe ik dit in Code heb gedaan:
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/862b186b430d535002b9a67db90443bc7cc58700/views/deejays.liquid#L90-L103
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L174-L187
 
 ## Empty state (DJ overzicht)
 
@@ -188,8 +210,7 @@ https://github.com/user-attachments/assets/08b95c2c-d1e5-47b8-b323-62bd86212582
 
 Hieronder is te zien hoe ik dat in code heb gedaan: (ELSE)
 
-https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality/blob/5024b4c1ab8eecce5c2a2b83023c98112532857c/views/deejays.liquid#L28-L37
-
+https://github.com/DivaniNL/user-experience-enhanced-website/blob/4000bec181ad9c792bcb9ddc48c04167245d9f48/views/deejays.liquid#L105-L108
 
 ## Installatie
 
@@ -203,7 +224,7 @@ Om dit project lokaal te installeren en te draaien, volg je de onderstaande stap
 ### Stappen
 
 1. **Clone de repository**
-    - Ga naar de repository: [https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality](https://github.com/DivaniNL/the-web-is-for-everyone-interactive-functionality)
+    - Ga naar de repository: [https://github.com/DivaniNL/user-experience-enhanced-website](https://github.com/DivaniNL/user-experience-enhanced-website)
     - Klik op Code (groene knop) -> Open with GitHub Desktop
     - Klik op Clone
     - Selecteer "For my own purposes"
