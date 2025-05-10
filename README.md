@@ -21,19 +21,41 @@ Als een bezoeker van de website, wil ik per radiostation de DJ’s kunnen liken 
 
 ## Ontwerpkeuzens
 
-Ik heb een ontwerp gemaakt waar het DJ overzicht zal passen met de rest van de styling. 
-Ik heb tijdens het ontwerpen rekening gehouden met toegangkelijkheid door voldoende feedback en feedforward toe te passen. 
+Ik heb de loading state gerefactord en twee versies hiervan gemaakt
 
-https://github.com/user-attachments/assets/1d89578b-120c-4a8b-9d25-e5b07483362b
+1. Spinning Vinyl
 
-In dit ontwerp heb ik **Feedforward** toegepast door een label toe te voegen aan de (Un)Like button.
 
-In dit ontwerp heb ik **Feedback** toegepast op meerdere manieren.
-1. Door de label te veranderen
-2. Door de achtergrondkleur en tekstkleur van de knop te veranderen als je hem geliked hebt t.o.v als je de DJ niet geliked hebt.
-3. Notificatiebalk boven (in video onder **Gebruik** is dit te zien)
-**NIEUW DEZE SPRINT**
-4. Als er een like of unlike wordt gedaan, stuitert de gelikete card omhoog
+Ik heb, in stijl van een radiostation bedacht om een draaiende plaat te laten zien. Hieronder heb ik het in Figma beschreven
+![436088359-cd0adbd8-8e69-40a0-8cff-b3b87cc748e6](https://github.com/user-attachments/assets/58118cf1-5062-4c9d-897e-0aa8a418a510)
+
+Hieronder is het resultaat te zien:
+
+https://github.com/user-attachments/assets/a126fdeb-cfa6-40b2-882e-eaecd9644acb
+
+
+2. Pulsing Heart
+
+Na feedback van een klasgenoot heb ik besloten deze functie door te voeren. Hieronder is haar schets ter inspiratie:
+<img width="638" alt="437364981-e92b9462-8caf-48f4-8f64-2b4eaec63391" src="https://github.com/user-attachments/assets/c98cb0bf-87ee-4012-8a24-64eca4701c38" />
+Hieronder het resultaat
+
+https://github.com/user-attachments/assets/6a14d723-cd8a-4f6b-b7d0-4fd769c6be1f
+
+3. Like Button
+   
+Ook heb ik twee wijzigingen doorgevoerd aan de button.
+Ten eerste heb ik de padding wat opgehoogd zodat de knop beter klikbaar is.
+Daarnaast heb ik het hart in de unliked state niet meer opgevuld. Nu is het duidelijker of een DJ al geliked is of niet.
+
+Oude situatie:
+
+![Screenshot (340)](https://github.com/user-attachments/assets/2d11f066-11bd-44c3-9aa7-61e1506f94b8)
+
+Nieuwe situatie:
+
+![Screenshot (341)](https://github.com/user-attachments/assets/d2be475f-8521-4cbb-807f-1c22dab4b1f5)
+
 
 
 ## Kenmerken
